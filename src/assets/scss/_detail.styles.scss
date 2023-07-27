@@ -1,0 +1,136 @@
+.detail-page {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  .detail {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1D2537;
+
+    .detail-header {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        opacity: .5;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        color: #fff;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        h1 {
+          text-transform: capitalize;
+          font-size: 26px;
+        }
+      }
+
+      .flag-wrapper {
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+        @include lg {
+          margin-top: 80px;
+        }
+
+        img {
+          &.flag {
+            height: 300px;
+            width: 500px;
+            object-fit: cover;
+            object-position: center;
+
+            @include md {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .detail-body {
+      padding: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @include md {
+        margin-top: 30px;
+      }
+
+      .informations {
+        width: 500px;
+
+        @include md {
+          width: 100%;
+        }
+
+        ul {
+          border-collapse: collapse;
+          border-radius: 5px;
+
+          li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid;
+            padding: 5px;
+
+            &:first-child {
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+            }
+
+            &:last-child {
+              border-bottom-left-radius: 5px;
+              border-bottom-right-radius: 5px;
+            }
+
+            &:not(&:first-child) {
+              margin-top: -1px;
+            }
+
+            span {
+              display: block;
+
+              &:first-child {
+                width: 100px;
+                border-right: 1px solid;
+              }
+
+              &:not(:first-child) {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.list-page {
+  width: 100%;
+  height: 100%;
+
+  .list-items {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    height: 100%;
+    overflow-y: auto;
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .list-item {
+      cursor: pointer;
+      height: 250px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #1D2537;
+      display: flex;
+      flex-direction: column;
+      transition: .2s ease-in-out;
+      user-select: none;
+
+      &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+        .card-body {
+          .country-name {
+            opacity: 1;
+          }
+        }
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+
+        .flag-wrapper {
+          width: 150px;
+          height: 100px;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+
+          img {
+            &.flag {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+
+      .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+
+        .country-name {
+          transition: .2s ease-in-out;
+          color: #fff;
+          opacity: .5;
+        }
+      }
+    }
+  }
+}
