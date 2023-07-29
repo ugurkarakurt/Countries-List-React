@@ -6,9 +6,10 @@ import { loading } from '../../redux/features/countries/countrySlice';
 
 export default function SearchBar() {
   const dispatch = useDispatch();
-  const selectCountry = document.querySelector('#selectCountry');
+
 
   const onSearchChange = (event) => {
+    let selectCountry = document.querySelector('#selectCountry');
     dispatch(loading(true));
     selectCountry.value = ''
 

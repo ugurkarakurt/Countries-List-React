@@ -6,9 +6,9 @@ import { loading } from '../../redux/features/countries/countrySlice';
 export default function SelectBox() {
   const dispatch = useDispatch();
   const selectedRegion = localStorage.getItem('selectedRegion');
-  const searchCountry = document.querySelector('#searchCountry');
 
   const onSelectChange = (event) => {
+    let searchCountry = document.querySelector('#searchCountry');
     searchCountry.value = ''
     dispatch(loading(true));
     const selectFieldString = event.target.value.toLocaleLowerCase();
