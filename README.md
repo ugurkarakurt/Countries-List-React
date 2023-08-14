@@ -1,3 +1,3 @@
 # Country List with React/Redux
 
-visit [Countrt List](country-list-with-react.surge.sh).
+visit [Countrt List](https://country-list-with-react.surge.sh).
